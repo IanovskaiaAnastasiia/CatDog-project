@@ -1,0 +1,81 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Породы кошек и собак
+{% endblock %}
+
+{% block page-lead %}
+Это страничка проекта про изучение пород кошек и собак. <br/>
+Этот проект поможет расширить свои знания в области кинологии и фелинологии.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-6" id="project-contents">
+    <h1 class="pb-1 border-bottom">Что есть в этом проекте:</h1>
+    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-3 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+    </div>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col-lg-3">
+            <h3 class="fs-2">Список пород</h3>
+        </div>
+        <div class="col-lg-6">
+            <p class="fs-5">На данной странице можно посмотреть список пород, уже внесённых в список изучаемых. С помощью этой 
+                    таблицы можно выучить основные характеристики и особенности пород.</p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-2">
+            <a href="/breeds-list" class="btn btn-success fs-4">Посмотреть</a>
+        </div>
+    </div>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col-lg-3">
+            <h3 class="fs-2">Форма для добавления породы</h3>
+        </div>
+        <div class="col-lg-6">
+            <p class="fs-5">В случае необходимости расширить список пород, эта форма позволит самостоятельно добавить для
+                    изучения новые породы с их описаниями.</p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-2">
+            <a href="/add-breed" class="btn btn-success fs-4">
+                    Заполнить
+            </a>
+        </div>
+    </div>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col-lg-3">
+            <h3 class="fs-2">Тест</h3>
+        </div>
+        <div class="col-lg-6">
+            <p class="fs-5">Здесь можно проверить свои знания, пройдя небольшой тест по изученному материалу.</p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-2">
+            <a href="/test-breed" class="btn btn-success fs-4">
+                     Пройти тест
+            </a>
+        </div>
+    </div>
+     <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col-lg-3">
+            <h3 class="fs-2">Статистика</h3>
+        </div>
+        <div class="col-lg-6">
+            <p class="fs-5">Сколько пород уже в списке? Какой длины их описания?</p>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="col-lg-2">
+            <a href="/stats" class="btn btn-success fs-4">
+                    Изучить
+                </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+Тест пройден
+{% else %}
+Тест не пройден
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="breed-form-result">
+    <p style="font-size:26px;">Уважаемый пользователь <span class="fst-italic">{{ user }}</span>,<br/>
+        Вы <span class="fw-bold">{% if success %}успешно завершили{% else %}отправили пустой{% endif %} тест</span>.
+    </p>
+
+    <h2 class="pb-2 border-bottom">Комментарии</h2>
+    <p>{{ comment }}</p>
+    {% if success %}
+    <p>{{ comment1 }}</p>
+    <p>{{ comment2 }}</p>
+    <p>{{ comment3 }}</p>
+    {% endif %}
+    
+    {% if success %}
+    <h2 class="pb-2 border-bottom">Результаты проверки</h2>
+    <h4><u>Вопрос №1</u>:</h4>
+    <p><span class="fw-bold">Ваш ответ:</span> {% if isanswer1 %}<em>{% if iscorrect1 %}<span style="color:green;">{{ useranswer1 }}</span>
+    {% else %}<span style="color:red;">{{ useranswer1 }}</span>{% endif %}</em>{% else %}<span class="fw-bold"> отсутствует</span>{% endif %}</p>
+    <p><span class="fw-bold">Правильный ответ:</span> <em>{{ answer1 }}</em></p>
+    <h4><u>Вопрос №2</u>:</h4>
+    <p><span class="fw-bold">Ваш ответ:</span> {% if isanswer2 %}<em>{% if iscorrect2 %}<span style="color:green;">{{ useranswer2 }}</span>
+    {% else %}<span style="color:red;">{{ useranswer2 }}</span>{% endif %}</em>{% else %}<span class="fw-bold"> отсутствует</span>{% endif %}</p>
+    <p><span class="fw-bold">Правильный ответ:</span> <em>{{ answer2 }}</em></p>
+    <h4><u>Вопрос №3</u>:</h4>
+    <p><span class="fw-bold">Ваш ответ:</span> {% if isanswer3 %}<em>{% if iscorrect3 %}<span style="color:green;">{{ useranswer3 }}</span>
+    {% else %}<span style="color:red;">{{ useranswer3 }}</span>{% endif %}</em>{% else %}<span class="fw-bold"> отсутствует</span>{% endif %}</p>
+    <p><span class="fw-bold">Правильный ответ:</span> <em>{{ answer3 }}</em></p>
+    
+    <h3><u>Итоговый балл</u>:</h3>
+    <p style="font-size:26px;">Вы набрали <span class="fw-bold">{{ summary }}</span> из <span class="fw-bold">{{ max }}</span> баллов.</p>
+    {% endif %}
+    
+
+    <h2 class="pb-2 border-bottom"></h2>
+    <ul>
+        <li>пройти <a href="/test-breed">тест</a> ещё раз,</li>
+         <li>перейти к <a href="/breeds-list">списку</a> пород</li>
+         <li>вернуться на <a href="/">главную</a></li>
+    </ul>
+</div>
+{% endblock %}
